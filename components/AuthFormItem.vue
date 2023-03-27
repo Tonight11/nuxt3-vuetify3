@@ -31,7 +31,9 @@
 			<v-text-field
 				id="1"
 				variant="outlined"
-				append-inner-icon="mdi-information-outline"
+				:append-inner-icon="
+					email.errorMessage.value ? 'mdi-information-outline' : ''
+				"
 				v-model="email.value.value"
 				:error-messages="email.errorMessage.value"
 			></v-text-field>
@@ -43,7 +45,9 @@
 				type="password"
 				id="2"
 				variant="outlined"
-				append-inner-icon="mdi-information-outline"
+				:append-inner-icon="
+					password.errorMessage.value ? 'mdi-information-outline' : ''
+				"
 				v-model="password.value.value"
 				:error-messages="password.errorMessage.value"
 			></v-text-field>
@@ -70,7 +74,7 @@
 		align-items: center;
 		margin-bottom: 24px;
 	}
-	
+
 	.form-control {
 		text-align: left;
 

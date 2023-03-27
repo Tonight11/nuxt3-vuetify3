@@ -12,7 +12,7 @@
 	</div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	a {
 		font-weight: 600;
 		font-size: 14px;
