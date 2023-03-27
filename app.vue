@@ -1,18 +1,16 @@
 <script setup lang="ts"></script>
 
 <template>
-	<div>
-		<v-app>
-			<v-row>
-				<v-col>
-					<AuthForm />
-				</v-col>
-				<v-col>
-					<img class="img" src="~/assets/img/sec.jpg" alt="" />
-				</v-col>
-			</v-row>
-		</v-app>
-	</div>
+	<v-app>
+		<v-row>
+			<v-col>
+				<AuthForm />
+			</v-col>
+			<v-col class="hide">
+				<img class="img" src="~/assets/img/sec.jpg" alt="" />
+			</v-col>
+		</v-row>
+	</v-app>
 </template>
 
 <style lang="scss">
@@ -26,5 +24,11 @@
 		height: 100%;
 		width: 100%;
 		object-fit: cover;
+	}
+
+	.hide {
+		@media screen and (max-width: 900px) {
+			display: none;
+		}
 	}
 </style>
