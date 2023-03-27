@@ -2,28 +2,22 @@
 	import { useField, useForm } from 'vee-validate';
 	const { handleSubmit } = useForm({
 		validationSchema: {
-			phone(value: any) {
-				if (value?.length > 9 && /[0-9-]+/.test(value)) return true;
+			password(value: string) {
+				if (value?.length >= 6) return true;
 
-				return 'Phone number needs to be at least 9 digits.';
+				return 'Please fill in your password';
 			},
 			email(value: any) {
 				if (/^[a-z.-]+@[a-z.-]+\.[a-z]+$/i.test(value)) return true;
 
-				return 'Must be a valid e-mail.';
-			},
-
-			checkbox(value: string) {
-				if (value === '1') return true;
-
-				return 'Must be checked.';
+				return 'Please check email address';
 			},
 		},
 	});
 
-	const phone = useField('phone');
+	const password = useField('password');
 	const email = useField('email');
-	const checkbox = useField('checkbox');
+	const ex4 = ref(['indigo']);
 
 	const submit = handleSubmit(values => {
 		alert(JSON.stringify(values, null, 2));
@@ -31,34 +25,67 @@
 </script>
 
 <template>
-	<form @submit.prevent="submit">
-		<v-text-field
-			class="form-control"
-			v-model="email.value.value"
-			error-messages="name.errorMessage.value"
-		></v-text-field>
+	<form @submit.prevent="submit" class="form-main">
+		<div class="form-control">
+			<label for="1">Email</label>
+			<v-text-field
+				id="1"
+				variant="outlined"
+				append-inner-icon="mdi-information-outline"
+				v-model="email.value.value"
+				:error-messages="email.errorMessage.value"
+			></v-text-field>
+		</div>
 
-		<v-text-field
-			class="form-control"
-			v-model="phone.value.value"
-			error-messages="Please fill in your password"
-		></v-text-field>
+		<div class="form-control">
+			<label for="2">Password</label>
+			<v-text-field
+				type="password"
+				id="2"
+				variant="outlined"
+				append-inner-icon="mdi-information-outline"
+				v-model="password.value.value"
+				:error-messages="password.errorMessage.value"
+			></v-text-field>
+		</div>
 
-		<v-checkbox
-			v-model="checkbox.value.value"
-			:error-messages="checkbox.errorMessage.value"
-			value="1"
-			label="Remember me"
-			type="checkbox"
-		></v-checkbox>
+		<div class="additional">
+			<v-checkbox
+				label="Remember me"
+				v-model="ex4"
+				color="indigo"
+				value="indigo"
+				hide-details
+			></v-checkbox>
+			<nuxt-link to="/forgot">Forgot password</nuxt-link>
+		</div>
 
-		<v-btn class="me-4" type="submit"> submit </v-btn>
+		<v-btn class="form-main__btn" type="submit"> submit </v-btn>
 	</form>
 </template>
 
-<style lang="scss">
-	.v-text-field input {
-		border: none;
-		background-color: transparent;
+<style lang="scss" scoped>
+	.additional {
+		display: flex;
+		align-items: center;
+		margin-bottom: 24px;
+	}
+	
+	.form-control {
+		text-align: left;
+
+		& label {
+			display: block;
+			margin-bottom: 6px;
+		}
+	}
+	.form-main {
+		display: flex;
+		flex-direction: column;
+		&__btn {
+			text-align: center;
+			background-color: #7f56d9;
+			color: white;
+		}
 	}
 </style>
