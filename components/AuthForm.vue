@@ -23,8 +23,12 @@
 		max-width: 360px;
 		text-align: center;
 		width: 100%;
-		margin: 100px auto 0;
+		margin: 0 auto 0;
 		padding: 0 10px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 100vh;
 
 		&__form {
 			margin-bottom: 32px;
@@ -32,10 +36,18 @@
 	}
 
 	.logo {
-		margin-bottom: 24px;
+		width: 48px;
+		height: 36px;
+		margin: 0 auto 24px;
 	}
 
 	.title {
 		margin-bottom: 32px;
+	}
+
+	.help {
+		font-weight: 400;
+		font-size: 14px;
+		color: #475467;
 	}
 </style>

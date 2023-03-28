@@ -14,7 +14,7 @@
 	}
 
 	.img {
-		height: 100%;
+		height: 100vh;
 		width: 100%;
 		object-fit: cover;
 	}
