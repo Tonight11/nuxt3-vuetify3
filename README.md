@@ -1,3 +1,8 @@
+# Trying vuetify 3 with nuxt 3. Made a logIn page with a verification
+web-site link https://nuxt3-vuetify3-test.netlify.app/
+
+# Vuetify doc: https://vuetifyjs.com
+
 # Nuxt 3 Minimal Starter
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
