@@ -7,8 +7,8 @@
 
 				return 'Please fill in your password';
 			},
-			email(value: any) {
-				if (/^[a-z.-]+@[a-z.-]+\.[a-z]+$/i.test(value)) return true;
+			email(value: string) {
+				if (/^[a-zA-Z0-9.-]+@[a-z.-]+\.[a-z]+$/i.test(value)) return true;
 
 				return 'Please check email address';
 			},
