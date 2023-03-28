@@ -7,4 +7,17 @@ export default defineNuxtConfig({
 	build: {
 		transpile: ['vuetify'],
 	},
+	modules: [
+		[
+			'@nuxtjs/google-fonts',
+			{
+				families: {
+					Inter: true,
+					download: true,
+					inject: true,
+				},
+				text: 'Log in to your account',
+			},
+		],
+	],
 });
