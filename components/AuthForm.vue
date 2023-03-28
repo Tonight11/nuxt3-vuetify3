@@ -42,7 +42,14 @@
 	}
 
 	.title {
+		font-weight: 600;
+		font-size: 30px;
+		color: #101828;
 		margin-bottom: 32px;
+
+		@media screen and (max-width: 900px) {
+			font-size: 24px;
+		}
 	}
 
 	.help {

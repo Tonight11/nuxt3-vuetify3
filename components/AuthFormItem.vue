@@ -29,6 +29,8 @@
 		<div class="form-control">
 			<label for="1">Email</label>
 			<v-text-field
+				density="compact"
+				class="mb-5"
 				id="1"
 				variant="outlined"
 				:append-inner-icon="
@@ -36,12 +38,15 @@
 				"
 				v-model="email.value.value"
 				:error-messages="email.errorMessage.value"
+				hide-details="auto"
 			></v-text-field>
 		</div>
 
 		<div class="form-control">
 			<label for="2">Password</label>
 			<v-text-field
+				density="compact"
+				class="mb-1"
 				type="password"
 				id="2"
 				variant="outlined"
@@ -50,6 +55,7 @@
 				"
 				v-model="password.value.value"
 				:error-messages="password.errorMessage.value"
+				hide-details="auto"
 			></v-text-field>
 		</div>
 
@@ -64,15 +70,15 @@
 			<nuxt-link to="/forgot">Forgot password</nuxt-link>
 		</div>
 
-		<v-btn class="form-main__btn" type="submit"> submit </v-btn>
+		<v-btn class="form-main__btn" type="submit" height="44"> submit </v-btn>
 	</form>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	.additional {
 		display: flex;
 		align-items: center;
-		margin-bottom: 24px;
+		margin-bottom: 4px;
 	}
 
 	.form-control {
@@ -81,6 +87,9 @@
 		& label {
 			display: block;
 			margin-bottom: 6px;
+			font-weight: 500;
+			font-size: 14px;
+			color: #344054;
 		}
 	}
 	.form-main {
@@ -91,5 +100,44 @@
 			background-color: #7f56d9;
 			color: white;
 		}
+	}
+
+	.v-input {
+		border-radius: 8px;
+		overflow: hidden;
+	}
+
+	.v-field__outline__start {
+		border-top-left-radius: 8px !important;
+		border-bottom-left-radius: 8px !important;
+	}
+	.v-field__outline__end {
+		border-top-right-radius: 8px !important;
+		border-bottom-right-radius: 8px !important;
+	}
+
+	.v-field__outline__end,
+	.v-field__outline__start {
+		border-color: #d0d5dd;
+	}
+
+	.v-field--error {
+		.v-field__outline__end,
+		.v-field__outline__start {
+			border-color: #f04438;
+		}
+	}
+
+	.v-field--error:not(.v-field--disabled) .v-field__append-inner > .v-icon {
+		color: #f04438;
+	}
+
+	.v-label {
+		font-size: 14px;
+		color: #344054;
+	}
+
+	.v-messages__message {
+		color: #f04438;
 	}
 </style>
