@@ -7,17 +7,20 @@ export default defineNuxtConfig({
 	build: {
 		transpile: ['vuetify'],
 	},
-	modules: [
-		[
-			'@nuxtjs/google-fonts',
+	head: {
+		link: [
 			{
-				families: {
-					Inter: true,
-					download: true,
-					inject: true,
-				},
-				text: 'Log in to your account',
+				rel: 'stylesheet',
+				href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap',
+			},
+			{
+				rel: 'preconnect',
+				href: 'https://fonts.gstatic.com',
+			},
+			{
+				rel: 'preconnect',
+				href: 'https://fonts.googleapis.com',
 			},
 		],
-	],
+	},
 });

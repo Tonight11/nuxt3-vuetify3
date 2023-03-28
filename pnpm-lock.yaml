@@ -2,7 +2,6 @@ lockfileVersion: 5.4
 
 specifiers:
   '@mdi/font': ^7.2.96
-  '@nuxtjs/google-fonts': ^3.0.0
   nuxt: ^3.3.2
   sass: ^1.60.0
   vee-validate: ^4.8.4
@@ -15,7 +14,6 @@ dependencies:
   vuetify: 3.1.4
 
 devDependencies:
-  '@nuxtjs/google-fonts': 3.0.0
   nuxt: 3.3.2_sass@1.60.0
 
 packages:
@@ -826,17 +824,6 @@ packages:
       - vls
       - vti
       - vue-tsc
-    dev: true
-
-  /@nuxtjs/google-fonts/3.0.0:
-    resolution: {integrity: sha512-knP2CJFkMHGQ9pepVNwquXvqiIHDma/6yZNXiYk7WWatRbbQUPf2423vXiBYu267Mff2KMuDLoAJ1Dsv2ymhdQ==}
-    dependencies:
-      '@nuxt/kit': 3.3.2
-      google-fonts-helper: 3.2.4
-      pathe: 1.1.0
-    transitivePeerDependencies:
-      - rollup
-      - supports-color
     dev: true
 
   /@rollup/plugin-alias/4.0.3_rollup@3.20.2:
@@ -2309,15 +2296,6 @@ packages:
       ignore: 5.2.4
       merge2: 1.4.1
       slash: 4.0.0
-    dev: true
-
-  /google-fonts-helper/3.2.4:
-    resolution: {integrity: sha512-M740UjqBOxmG2qFUW7Lhgak9WDpsT18zxLJuG+MP4r+G1vhqbWm3x3D40xFEzhveQAneaEr8WjPxf+vcx9Xohg==}
-    dependencies:
-      deepmerge: 4.3.1
-      hookable: 5.5.2
-      ofetch: 1.0.1
-      ufo: 1.1.1
     dev: true
 
   /graceful-fs/4.2.11:
