@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+	modules: ['@vite-pwa/nuxt'],
 	css: [
 		'vuetify/lib/styles/main.sass',
 		'@mdi/font/css/materialdesignicons.min.css',
@@ -22,5 +23,33 @@ export default defineNuxtConfig({
 				href: 'https://fonts.googleapis.com',
 			},
 		],
+	},
+	pwa: {
+		registerType: 'autoUpdate',
+		manifest: {
+			name: 'My Awesome App',
+			short_name: 'MyApp',
+			description: 'My Awesome App description',
+			theme_color: '#ffffff',
+			icons: [
+				{
+					src: 'pwa-192x192.png',
+					sizes: '192x192',
+					type: 'image/png',
+				},
+				{
+					src: 'pwa-512x512.png',
+					sizes: '512x512',
+					type: 'image/png',
+				},
+			],
+		},
+		workbox: {
+			navigateFallback: '/',
+			globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
+		},
+		devOptions: {
+			enabled: true,
+		},
 	},
 });
